@@ -1,0 +1,94 @@
+## Build outputs
+bin/
+obj/
+out/
+[Aa]rtifacts/
+
+## Visual Studio cache
+.vs/
+*.user
+*.rsuser
+*.suo
+*.cache
+*.prof
+
+## Rider / IntelliJ
+.idea/
+*.sln.iml
+
+## VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+history/
+
+## .NET
+project.lock.json
+project.fragment.lock.json
+artifacts/
+*.nuget.props
+*.nuget.targets
+*.nupkg
+*.snupkg
+
+## Logs
+*.log
+logs/
+Log/
+Logs/
+
+## Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+*.lock
+*.orig
+
+## OS általi fájlok
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+__MACOSX/
+
+# Windows
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Linux
+*~
+
+## User secrets / config
+secrets.json
+*.env
+*.env.local
+
+## EF Core
+Migrations/obj/
+*.db-shm
+*.db-wal
+
+## Databases
+*.db
+*.sqlite
+*.sqlite3
+*.mdf
+*.ldf
+
+## Publish
+publish/
+dist/
+
+## Tests
+TestResults/
+coverage/
+*.coverage
+*.coveragexml
+
+## Docker
+docker-compose.override.yml
+docker-data/
