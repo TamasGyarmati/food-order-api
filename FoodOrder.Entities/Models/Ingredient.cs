@@ -20,9 +20,7 @@ public class Ingredient
     [Range(1, 1000)]
     public int Gramms { get; set; }
     
-    [JsonIgnore]
     public string? FoodId { get; set; }
     
-    [JsonIgnore]
     public virtual Food? Food { get; set; }
 }

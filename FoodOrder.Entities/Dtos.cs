@@ -1,5 +1,3 @@
-using FoodOrder.Entities.Models;
-
 namespace FoodOrder.Entities;
 
 public static class Dtos

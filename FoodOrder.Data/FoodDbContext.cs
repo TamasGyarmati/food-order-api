@@ -20,11 +20,9 @@ public class FoodDbContext(DbContextOptions<FoodDbContext> options) : DbContext(
             .HasForeignKey(i => i.FoodId)
             .OnDelete(DeleteBehavior.Cascade);
         
-        // ---- FOOD GUID-ek ----
         var food1Id = "1e7c8b8e-4a9d-4bc4-9f18-1cc6f30edc11";
         var food2Id = "3d47c7a1-8f0f-4cb1-9b92-f5235eb3f83e";
-
-        // ---- INGREDIENT GUID-ek ----
+        
         var ing1Id = "b5a1c94d-19d4-4e16-a60b-d093c8bcd451";
         var ing2Id = "8b32f9a0-59ae-417a-9c28-f6fa1f2e55ca";
         var ing3Id = "c27479a1-07ad-4a63-8c4b-0b7035e8dcc8";
@@ -32,8 +30,7 @@ public class FoodDbContext(DbContextOptions<FoodDbContext> options) : DbContext(
         var ing4Id = "e2f1a3cd-11ea-4c92-8461-6053b9a9f9c2";
         var ing5Id = "0ffb5dc5-6a51-4ed7-94a5-41b15b5e0e8b";
         var ing6Id = "f9482b0d-3ebe-434e-8bd0-44c446a7a5b0";
-
-        // ---- FOOD SEED ----
+        
         modelBuilder.Entity<Food>().HasData(
             new Food
             {
@@ -48,8 +45,7 @@ public class FoodDbContext(DbContextOptions<FoodDbContext> options) : DbContext(
                 Price = 12
             }
         );
-
-        // ---- INGREDIENT SEED ----
+        
         modelBuilder.Entity<Ingredient>().HasData(
             new Ingredient
             {
@@ -75,8 +71,7 @@ public class FoodDbContext(DbContextOptions<FoodDbContext> options) : DbContext(
                 Gramms = 100,
                 FoodId = food1Id
             },
-
-            // Hamburger ingredients
+            
             new Ingredient
             {
                 Id = ing4Id,
