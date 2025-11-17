@@ -18,7 +18,8 @@ public class Program
 
         builder.Services.AddDbContext<FoodDbContext>(opt =>
         {
-            opt.UseSqlServer(builder.Configuration["CustomConnectionStrings:FoodDb"]);
+            opt.UseSqlServer(builder.Configuration["CustomConnectionStrings:FoodDb"])
+                .UseLazyLoadingProxies();
         });
 
         var app = builder.Build();
