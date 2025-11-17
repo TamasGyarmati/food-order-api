@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "DHwkSUSAuHfjJ7OClPdDRp6wmr6/VJvD1BHBDu9trAI=",
+  "Source": "FoodOrder.Endpoint",
+  "BasePath": "_content/FoodOrder.Endpoint",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
