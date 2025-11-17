@@ -6,36 +6,27 @@ public interface IFoodRepository
 {
     IEnumerable<Food> ReadAll();
     Task<Food?> ReadById(string id);
-    Task<Food> Create(Food food);
+    Task Create(Food food);
     Task Update(Food food);
     Task<bool> Delete(string id);
 }
 
-public class FoodRepository : IFoodRepository
+public class FoodRepository(FoodDbContext context) : IFoodRepository
 {
-    readonly FoodDbContext _context;
-    
-    public FoodRepository(FoodDbContext context)
-    {
-        _context = context;
-    }
-    
-    public IEnumerable<Food> ReadAll() => _context.Foods.ToList();
+    public IEnumerable<Food> ReadAll() => context.Foods.ToList();
 
-    public async Task<Food?> ReadById(string id) => await _context.Foods.FindAsync(id); 
+    public async Task<Food?> ReadById(string id) => await context.Foods.FindAsync(id); 
     
-    public async Task<Food> Create(Food entity)
+    public async Task Create(Food entity)
     {
-        var food = _context.Foods.Add(entity);
-        await _context.SaveChangesAsync();
-        
-        return food.Entity;
+        context.Foods.Add(entity);
+        await context.SaveChangesAsync();
     }
 
     public async Task Update(Food newFood)
     {
-        _context.Foods.Update(newFood);
-        await _context.SaveChangesAsync();
+        context.Foods.Update(newFood);
+        await context.SaveChangesAsync();
     }
 
     public async Task<bool> Delete(string id)
@@ -44,8 +35,8 @@ public class FoodRepository : IFoodRepository
         
         if (food == null) return false;
         
-        _context.Remove(food);
-        await _context.SaveChangesAsync();
+        context.Remove(food);
+        await context.SaveChangesAsync();
         
         return true;
     }

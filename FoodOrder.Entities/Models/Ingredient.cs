@@ -1,5 +1,5 @@
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace FoodOrder.Entities.Models;
 
@@ -20,7 +20,9 @@ public class Ingredient
     [Range(1, 1000)]
     public int Gramms { get; set; }
     
-    public string FoodId { get; set; }
+    [JsonIgnore]
+    public string? FoodId { get; set; }
     
-    public virtual Food Food { get; set; }
+    [JsonIgnore]
+    public virtual Food? Food { get; set; }
 }

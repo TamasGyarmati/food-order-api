@@ -1,4 +1,5 @@
 using FoodOrder.Data;
+using FoodOrder.Data.Repository;
 using Microsoft.EntityFrameworkCore;
 
 namespace FoodOrder.Endpoint;
@@ -12,6 +13,9 @@ public class Program
         builder.Services.AddAuthorization();
         builder.Services.AddControllers();
         builder.Services.AddRouting();
+
+        builder.Services.AddTransient<IFoodRepository, FoodRepository>();
+        builder.Services.AddTransient<IIngredientRepository, IngredientRepository>();
         
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
@@ -23,8 +27,7 @@ public class Program
         });
 
         var app = builder.Build();
-
-        // Configure the HTTP request pipeline.
+        
         if (app.Environment.IsDevelopment())
         {
             app.UseSwagger();
@@ -32,7 +35,6 @@ public class Program
         }
 
         app.MapControllers();
-        app.UseHttpsRedirection();
 
         app.UseAuthorization();
 

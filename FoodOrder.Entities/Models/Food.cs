@@ -24,6 +24,6 @@ public class Food
             return Ingredients?.Sum(i => i.CaloriePer100Gramms * ((double)i.Gramms / 100)) ?? 0;
         }
     }
-
+    
     public virtual ICollection<Ingredient>? Ingredients { get; set; } = new List<Ingredient>();
 }
