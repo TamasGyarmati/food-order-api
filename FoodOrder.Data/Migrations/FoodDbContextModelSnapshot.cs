@@ -35,6 +35,9 @@ namespace FoodOrder.Data.Migrations
                         .HasMaxLength(250)
                         .HasColumnType("nvarchar(250)");
 
+                    b.Property<string>("OrderId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
@@ -44,6 +47,8 @@ namespace FoodOrder.Data.Migrations
                         .HasColumnType("nvarchar(250)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("OrderId");
 
                     b.ToTable("Foods");
 
@@ -146,16 +151,21 @@ namespace FoodOrder.Data.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("FoodId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("FoodId");
-
                     b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("FoodOrder.Entities.Models.Food", b =>
+                {
+                    b.HasOne("FoodOrder.Entities.Models.Order", null)
+                        .WithMany("Food")
+                        .HasForeignKey("OrderId");
                 });
 
             modelBuilder.Entity("FoodOrder.Entities.Models.Ingredient", b =>
@@ -168,18 +178,14 @@ namespace FoodOrder.Data.Migrations
                     b.Navigation("Food");
                 });
 
-            modelBuilder.Entity("FoodOrder.Entities.Models.Order", b =>
-                {
-                    b.HasOne("FoodOrder.Entities.Models.Food", "Food")
-                        .WithMany()
-                        .HasForeignKey("FoodId");
-
-                    b.Navigation("Food");
-                });
-
             modelBuilder.Entity("FoodOrder.Entities.Models.Food", b =>
                 {
                     b.Navigation("Ingredients");
+                });
+
+            modelBuilder.Entity("FoodOrder.Entities.Models.Order", b =>
+                {
+                    b.Navigation("Food");
                 });
 #pragma warning restore 612, 618
         }

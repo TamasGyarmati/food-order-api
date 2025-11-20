@@ -21,6 +21,12 @@ public class DtoProvider
                         : 0);
             cfg.CreateMap<Ingredient, Dtos.IngredientViewDto>();
             cfg.CreateMap<Dtos.IngredientCreateDto, Ingredient>();
+            cfg.CreateMap<Order, Dtos.OrderViewDto>()
+                .AfterMap((src, dest) =>
+                {
+                    //dest.FoodId = src.Food?.Select(f => f.Id).ToArray() ?? [];
+                    dest.Name = src.Food?.Select(f => f.Name).ToArray() ?? [];
+                });
 
         }, new LoggerFactory()));
     }

@@ -32,4 +32,14 @@ public static class Dtos
     {
         [property: JsonPropertyOrder(5)] public double AvgGramms { get; set; }
     };
+
+    public record OrderCreateDto(string[] FoodId);
+
+    public record OrderViewDto(
+        string Id,
+        [property: JsonPropertyOrder(2)] DateTime OrderDate)
+    {
+        //[property: JsonPropertyOrder(0)] public string[] FoodId { get; set; }
+        [property: JsonPropertyOrder(1)] public string[] Name { get; set; }
+    }
 }

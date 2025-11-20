@@ -31,6 +31,7 @@ public class Program
         
         builder.Services.AddTransient<IFoodRepository, FoodRepository>();
         builder.Services.AddTransient<IIngredientRepository, IngredientRepository>();
+        builder.Services.AddTransient<IOrderRepository, OrderRepository>();
         builder.Services.AddTransient<FoodLogic>();
         builder.Services.AddTransient<IngredientLogic>();
         builder.Services.AddTransient<DtoProvider>();
