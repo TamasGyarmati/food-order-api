@@ -1,7 +1,9 @@
 using FoodOrder.Data;
 using FoodOrder.Data.Repository;
+using FoodOrder.Endpoint.Helpers;
 using FoodOrder.Logic;
 using FoodOrder.Logic.Helpers;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace FoodOrder.Endpoint;
@@ -16,6 +18,17 @@ public class Program
         builder.Services.AddControllers();
         builder.Services.AddRouting();
 
+        builder.Services.AddControllers(opt =>
+        {
+            opt.Filters.Add<ExceptionFilter>();
+            opt.Filters.Add<ValidationFilter>();
+        });
+        
+        builder.Services.Configure<ApiBehaviorOptions>(options =>
+        {
+            options.SuppressModelStateInvalidFilter = true;
+        });
+        
         builder.Services.AddTransient<IFoodRepository, FoodRepository>();
         builder.Services.AddTransient<IIngredientRepository, IngredientRepository>();
         builder.Services.AddTransient<FoodLogic>();
