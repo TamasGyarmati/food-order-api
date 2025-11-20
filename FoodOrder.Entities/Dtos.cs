@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace FoodOrder.Entities;
 
@@ -22,9 +23,13 @@ public static class Dtos
         int Gramms);
 
     public record FoodViewDto(
-        string Id,
-        string Name,
-        double Price,
-        double Calories,
-        IEnumerable<IngredientViewDto>? Ingredients);
+        [property: JsonPropertyOrder(0)] string Id,
+        [property: JsonPropertyOrder(1)] string Name,
+        [property: JsonPropertyOrder(2)] string Slug,
+        [property: JsonPropertyOrder(3)] double Price,
+        [property: JsonPropertyOrder(4)] double Calories,
+        [property: JsonPropertyOrder(6)] IEnumerable<IngredientViewDto>? Ingredients)
+    {
+        [property: JsonPropertyOrder(5)] public double AvgGramms { get; set; }
+    };
 }

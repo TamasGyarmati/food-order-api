@@ -18,6 +18,9 @@ namespace FoodOrder.Data.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "8.0.22")
+                .HasAnnotation("Proxies:ChangeTracking", false)
+                .HasAnnotation("Proxies:CheckEquality", false)
+                .HasAnnotation("Proxies:LazyLoading", true)
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -35,6 +38,11 @@ namespace FoodOrder.Data.Migrations
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
+                    b.Property<string>("Slug")
+                        .IsRequired()
+                        .HasMaxLength(250)
+                        .HasColumnType("nvarchar(250)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Foods");
@@ -44,13 +52,15 @@ namespace FoodOrder.Data.Migrations
                         {
                             Id = "1e7c8b8e-4a9d-4bc4-9f18-1cc6f30edc11",
                             Name = "Pizza",
-                            Price = 10.0
+                            Price = 10.0,
+                            Slug = ""
                         },
                         new
                         {
                             Id = "3d47c7a1-8f0f-4cb1-9b92-f5235eb3f83e",
                             Name = "Hamburger",
-                            Price = 12.0
+                            Price = 12.0,
+                            Slug = ""
                         });
                 });
 
@@ -63,7 +73,6 @@ namespace FoodOrder.Data.Migrations
                         .HasColumnType("float");
 
                     b.Property<string>("FoodId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("Gramms")
@@ -137,7 +146,6 @@ namespace FoodOrder.Data.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("FoodId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("OrderDate")
@@ -155,8 +163,7 @@ namespace FoodOrder.Data.Migrations
                     b.HasOne("FoodOrder.Entities.Models.Food", "Food")
                         .WithMany("Ingredients")
                         .HasForeignKey("FoodId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.Navigation("Food");
                 });
@@ -165,9 +172,7 @@ namespace FoodOrder.Data.Migrations
                 {
                     b.HasOne("FoodOrder.Entities.Models.Food", "Food")
                         .WithMany()
-                        .HasForeignKey("FoodId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("FoodId");
 
                     b.Navigation("Food");
                 });

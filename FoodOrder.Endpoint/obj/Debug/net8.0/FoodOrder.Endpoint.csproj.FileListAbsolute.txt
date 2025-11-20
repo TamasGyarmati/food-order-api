@@ -152,3 +152,4 @@
 /Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/FoodOrder/FoodOrder.Endpoint/bin/Debug/net8.0/AutoMapper.dll
 /Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/FoodOrder/FoodOrder.Endpoint/bin/Debug/net8.0/FoodOrder.Logic.dll
 /Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/FoodOrder/FoodOrder.Endpoint/bin/Debug/net8.0/FoodOrder.Logic.pdb
+/Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/FoodOrder/FoodOrder.Endpoint/bin/Debug/net8.0/SlugGenerator.dll

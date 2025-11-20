@@ -13,8 +13,12 @@ public class DtoProvider
     {
         Mapper = new Mapper(new MapperConfiguration(cfg =>
         {
-            cfg.CreateMap<Dtos.FoodCreateDto, Food>();
-            cfg.CreateMap<Food, Dtos.FoodViewDto>();
+            cfg.CreateMap<Dtos.FoodCreateDto, Food>()
+                .AfterMap((src, dest) => dest.Slug = SlugGenerator.SlugGenerator.GenerateSlug(src.Name));
+            cfg.CreateMap<Food, Dtos.FoodViewDto>()
+                .AfterMap((src, dest) => dest.AvgGramms = src.Ingredients?.Count > 0 
+                        ? src.Ingredients.Average(x => x.Gramms)
+                        : 0);
             cfg.CreateMap<Ingredient, Dtos.IngredientViewDto>();
             cfg.CreateMap<Dtos.IngredientCreateDto, Ingredient>();
 

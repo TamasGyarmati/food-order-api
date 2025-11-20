@@ -12,6 +12,9 @@ public class Food
     [StringLength(250)]
     public string Name { get; set; } = string.Empty;
     
+    [StringLength(250)]
+    public string Slug { get; set; } = string.Empty;
+    
     [Required]
     [Range(1, 50)]
     public double Price { get; set; }
