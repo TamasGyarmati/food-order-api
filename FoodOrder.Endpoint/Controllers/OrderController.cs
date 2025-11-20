@@ -21,6 +21,9 @@ public class OrderController(IOrderRepository repo, IFoodRepository foodRepo, Dt
     [HttpPost]
     public async Task<IActionResult> CreateOrder(Dtos.OrderCreateDto dto)
     {
+        if (dto.FoodId == null || dto.FoodId.Length == 0 || dto.FoodId.Any(string.IsNullOrEmpty))
+            throw new Exception("You must fill at least one FoodId!");
+        
         var foods = new List<Food>();
         
         foreach (var foodId in dto.FoodId)

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FoodOrder.Endpoint")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ae89a151ba5670c8460efc2537ea4c51f569bd07")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4f1b24a33f47d1649c384dc40c58ec3d8285e3f0")]
 [assembly: System.Reflection.AssemblyProductAttribute("FoodOrder.Endpoint")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FoodOrder.Endpoint")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
