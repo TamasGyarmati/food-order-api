@@ -1,16 +1,20 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace FoodOrder.Entities;
+
+// param / property (recordnál param kell hiszen nem propertyk hanem primary constructor paraméterek)
 
 public static class Dtos
 {
     public record FoodCreateDto(
         string Name,
-        double Price);
+        [param: Range(1, 50)] double Price);
 
     public record IngredientCreateDto(
         string FoodId,
-        string Name,
-        double CaloriePer100Gramms,
-        int Gramms);
+        [param: Required] string Name,
+        [param: Range(1, 1000)] double CaloriePer100Gramms,
+        [param: Range(1, int.MaxValue)] int Gramms);
 
     public record IngredientViewDto(
         string Name,
@@ -18,9 +22,9 @@ public static class Dtos
         int Gramms);
 
     public record FoodViewDto(
-        string FoodId,
-        string FoodName,
-        double FoodPrice,
+        string Id,
+        string Name,
+        double Price,
         double Calories,
         IEnumerable<IngredientViewDto>? Ingredients);
 }

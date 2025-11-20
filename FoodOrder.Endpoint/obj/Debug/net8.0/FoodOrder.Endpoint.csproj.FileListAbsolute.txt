@@ -149,3 +149,4 @@
 /Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/FoodOrder/FoodOrder.Endpoint/obj/Debug/net8.0/FoodOrder.Endpoint.pdb
 /Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/FoodOrder/FoodOrder.Endpoint/obj/Debug/net8.0/FoodOrder.Endpoint.genruntimeconfig.cache
 /Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/FoodOrder/FoodOrder.Endpoint/obj/Debug/net8.0/ref/FoodOrder.Endpoint.dll
+/Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/FoodOrder/FoodOrder.Endpoint/bin/Debug/net8.0/AutoMapper.dll
