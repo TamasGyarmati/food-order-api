@@ -1,6 +1,5 @@
 using FoodOrder.Entities.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 
 namespace FoodOrder.Data;
 
