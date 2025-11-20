@@ -1,6 +1,7 @@
 using FoodOrder.Data;
 using FoodOrder.Data.Repository;
-using FoodOrder.Endpoint.Helpers;
+using FoodOrder.Logic;
+using FoodOrder.Logic.Helpers;
 using Microsoft.EntityFrameworkCore;
 
 namespace FoodOrder.Endpoint;
@@ -17,6 +18,8 @@ public class Program
 
         builder.Services.AddTransient<IFoodRepository, FoodRepository>();
         builder.Services.AddTransient<IIngredientRepository, IngredientRepository>();
+        builder.Services.AddTransient<FoodLogic>();
+        builder.Services.AddTransient<IngredientLogic>();
         builder.Services.AddTransient<DtoProvider>();
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();

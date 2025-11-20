@@ -14,7 +14,7 @@ public static class Dtos
         string FoodId,
         [param: Required] string Name,
         [param: Range(1, 1000)] double CaloriePer100Gramms,
-        [param: Range(1, int.MaxValue)] int Gramms);
+        [param: Range(1, 1000)] int Gramms);
 
     public record IngredientViewDto(
         string Name,

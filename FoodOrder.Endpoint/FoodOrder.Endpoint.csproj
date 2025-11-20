@@ -19,6 +19,7 @@
     <ItemGroup>
       <ProjectReference Include="..\FoodOrder.Data\FoodOrder.Data.csproj" />
       <ProjectReference Include="..\FoodOrder.Entities\FoodOrder.Entities.csproj" />
+      <ProjectReference Include="..\FoodOrder.Logic\FoodOrder.Logic.csproj" />
     </ItemGroup>
 
 </Project>

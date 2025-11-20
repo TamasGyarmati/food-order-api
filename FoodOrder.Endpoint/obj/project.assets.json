@@ -1636,6 +1636,20 @@
         "runtime": {
           "bin/placeholder/FoodOrder.Entities.dll": {}
         }
+      },
+      "FoodOrder.Logic/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "AutoMapper": "15.1.0",
+          "FoodOrder.Data": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/FoodOrder.Logic.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FoodOrder.Logic.dll": {}
+        }
       }
     }
   },
@@ -4299,6 +4313,11 @@
       "type": "project",
       "path": "../FoodOrder.Entities/FoodOrder.Entities.csproj",
       "msbuildProject": "../FoodOrder.Entities/FoodOrder.Entities.csproj"
+    },
+    "FoodOrder.Logic/1.0.0": {
+      "type": "project",
+      "path": "../FoodOrder.Logic/FoodOrder.Logic.csproj",
+      "msbuildProject": "../FoodOrder.Logic/FoodOrder.Logic.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -4306,6 +4325,7 @@
       "AutoMapper >= 15.1.0",
       "FoodOrder.Data >= 1.0.0",
       "FoodOrder.Entities >= 1.0.0",
+      "FoodOrder.Logic >= 1.0.0",
       "Microsoft.AspNetCore.OpenApi >= 8.0.8",
       "Microsoft.EntityFrameworkCore >= 8.0.22",
       "Microsoft.EntityFrameworkCore.Design >= 8.0.22",
@@ -4345,6 +4365,9 @@
             },
             "/Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/FoodOrder/FoodOrder.Entities/FoodOrder.Entities.csproj": {
               "projectPath": "/Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/FoodOrder/FoodOrder.Entities/FoodOrder.Entities.csproj"
+            },
+            "/Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/FoodOrder/FoodOrder.Logic/FoodOrder.Logic.csproj": {
+              "projectPath": "/Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/FoodOrder/FoodOrder.Logic/FoodOrder.Logic.csproj"
             }
           }
         }

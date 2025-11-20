@@ -11,6 +11,7 @@
           "AutoMapper": "15.1.0",
           "FoodOrder.Data": "1.0.0",
           "FoodOrder.Entities": "1.0.0",
+          "FoodOrder.Logic": "1.0.0",
           "Microsoft.AspNetCore.OpenApi": "8.0.8",
           "Microsoft.EntityFrameworkCore": "8.0.22",
           "Microsoft.EntityFrameworkCore.Design": "8.0.22",
@@ -1003,6 +1004,18 @@
             "fileVersion": "1.0.0.0"
           }
         }
+      },
+      "FoodOrder.Logic/1.0.0": {
+        "dependencies": {
+          "AutoMapper": "15.1.0",
+          "FoodOrder.Data": "1.0.0"
+        },
+        "runtime": {
+          "FoodOrder.Logic.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
       }
     }
   },
@@ -1585,6 +1598,11 @@
       "sha512": ""
     },
     "FoodOrder.Entities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FoodOrder.Logic/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

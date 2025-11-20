@@ -1,8 +1,9 @@
 using AutoMapper;
 using FoodOrder.Entities;
 using FoodOrder.Entities.Models;
+using Microsoft.Extensions.Logging;
 
-namespace FoodOrder.Endpoint.Helpers;
+namespace FoodOrder.Logic.Helpers;
 
 public class DtoProvider
 {
