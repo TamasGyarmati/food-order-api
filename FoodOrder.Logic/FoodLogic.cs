@@ -1,3 +1,4 @@
+using System.Text;
 using FoodOrder.Data.Repository;
 using FoodOrder.Entities;
 using FoodOrder.Entities.Models;
@@ -20,5 +21,11 @@ public class FoodLogic(IFoodRepository repo, DtoProvider dtoProvider)
     {
         var food = dtoProvider.Mapper.Map<Food>(dto);
         await repo.Create(food);
+    }
+
+    public async Task DeleteAsync(string id)
+    {
+        var result = await repo.Delete(id);
+        if (!result) throw new Exception("Entity not found!");
     }
 }

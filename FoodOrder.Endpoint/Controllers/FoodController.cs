@@ -20,4 +20,7 @@ public class FoodController(FoodLogic logic) : ControllerBase
         await logic.CreateAsync(dto);
         return Ok($"Successfully created food named: '{dto.Name}'");
     }
+
+    [HttpDelete]
+    public async Task DeleteFood(string id) => await logic.DeleteAsync(id);
 }
