@@ -34,6 +34,7 @@ public class Program
         builder.Services.AddTransient<IOrderRepository, OrderRepository>();
         builder.Services.AddTransient<FoodLogic>();
         builder.Services.AddTransient<IngredientLogic>();
+        builder.Services.AddTransient<OrderLogic>();
         builder.Services.AddTransient<DtoProvider>();
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();

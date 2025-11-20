@@ -6,7 +6,7 @@ public interface IOrderRepository
 {
     IEnumerable<Order> ReadAll();
     Task<Order?> ReadById(string id);
-    Task Create(Order ingredient);
+    Task<Order> Create(Order ingredient);
     Task Update(Order ingredient);
     Task<bool> Delete(string id);
 }
@@ -17,10 +17,11 @@ public class OrderRepository(FoodDbContext context) : IOrderRepository
 
     public async Task<Order?> ReadById(string id) => await context.Orders.FindAsync(id); 
     
-    public async Task Create(Order entity)
+    public async Task<Order> Create(Order entity)
     {
-        context.Orders.Add(entity);
+        var order = context.Orders.Add(entity);
         await context.SaveChangesAsync();
+        return order.Entity;
     }
 
     public async Task Update(Order newOrder)

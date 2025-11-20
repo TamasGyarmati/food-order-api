@@ -150,9 +150,6 @@ namespace FoodOrder.Data.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("FoodId")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("datetime2");
 
@@ -163,9 +160,12 @@ namespace FoodOrder.Data.Migrations
 
             modelBuilder.Entity("FoodOrder.Entities.Models.Food", b =>
                 {
-                    b.HasOne("FoodOrder.Entities.Models.Order", null)
+                    b.HasOne("FoodOrder.Entities.Models.Order", "Order")
                         .WithMany("Food")
-                        .HasForeignKey("OrderId");
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.SetNull);
+
+                    b.Navigation("Order");
                 });
 
             modelBuilder.Entity("FoodOrder.Entities.Models.Ingredient", b =>

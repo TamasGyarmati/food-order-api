@@ -16,4 +16,10 @@ public class IngredientLogic(
         var ingredient = dtoProvider.Mapper.Map<Ingredient>(dto);
         await repo.Create(ingredient);
     }
+
+    public async Task DeleteAsync(string id)
+    {
+        var result = await repo.Delete(id);
+        if (!result) throw new NullReferenceException("Ingredient by ID was not found!");
+    }
 }

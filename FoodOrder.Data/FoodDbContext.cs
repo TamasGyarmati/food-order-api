@@ -20,6 +20,12 @@ public class FoodDbContext(DbContextOptions<FoodDbContext> options) : DbContext(
             .HasForeignKey(i => i.FoodId)
             .OnDelete(DeleteBehavior.Cascade);
         
+        modelBuilder.Entity<Order>()
+            .HasMany(o => o.Food)
+            .WithOne(f => f.Order)
+            .HasForeignKey(f => f.OrderId)
+            .OnDelete(DeleteBehavior.SetNull); // ne törölje ki a hozzá tartozó Food-okat
+        
         var food1Id = "1e7c8b8e-4a9d-4bc4-9f18-1cc6f30edc11";
         var food2Id = "3d47c7a1-8f0f-4cb1-9b92-f5235eb3f83e";
         

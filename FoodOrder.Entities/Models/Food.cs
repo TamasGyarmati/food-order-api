@@ -29,4 +29,6 @@ public class Food
     }
     
     public virtual ICollection<Ingredient>? Ingredients { get; set; } = new List<Ingredient>();
+    public virtual Order? Order { get; set; }
+    public string? OrderId { get; set; }
 }

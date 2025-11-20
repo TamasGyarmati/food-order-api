@@ -1,40 +1,23 @@
-using FoodOrder.Data.Repository;
 using FoodOrder.Entities;
-using FoodOrder.Entities.Models;
-using FoodOrder.Logic.Helpers;
+using FoodOrder.Logic;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FoodOrder.Endpoint.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class OrderController(IOrderRepository repo, IFoodRepository foodRepo, DtoProvider dtoProvider) : ControllerBase
+public class OrderController(OrderLogic logic) : ControllerBase
 {
     [HttpGet]
-    public IActionResult GetOrders()
-    {
-        var order = repo.ReadAll();
-        var orderView = order.Select(o => dtoProvider.Mapper.Map<Dtos.OrderViewDto>(o));
-        return Ok(orderView);
-    }
+    public IActionResult GetOrders() => Ok(logic.GetAsync());
     
     [HttpPost]
     public async Task<IActionResult> CreateOrder(Dtos.OrderCreateDto dto)
     {
-        if (dto.FoodId == null || dto.FoodId.Length == 0 || dto.FoodId.Any(string.IsNullOrEmpty))
-            throw new Exception("You must fill at least one FoodId!");
-        
-        var foods = new List<Food>();
-        
-        foreach (var foodId in dto.FoodId)
-        {
-            var food = await foodRepo.ReadById(foodId) ?? throw new Exception("One or more FoodId values are invalid.");
-            foods.Add(food);
-        }
-        
-        var order = new Order { Food = foods };
-        
-        await repo.Create(order);
-        return Ok($"Successfully created order: {order.Id}");
+        var orderId = await logic.CreateAsync(dto);
+        return Ok($"Successfully created order: {orderId}");
     }
+
+    [HttpDelete]
+    public async Task DeleteOrder(string id) => await logic.DeleteAsync(id);
 }

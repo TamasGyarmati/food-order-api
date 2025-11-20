@@ -9,10 +9,7 @@ namespace FoodOrder.Endpoint.Controllers;
 public class FoodController(FoodLogic logic) : ControllerBase
 {
     [HttpGet]
-    public IActionResult GetAllFoods()
-    {
-        return Ok(logic.GetAll());
-    }
+    public IActionResult GetAllFoods() => Ok(logic.GetAll());
 
     [HttpPost]
     public async Task<IActionResult> CreateFood(Dtos.FoodCreateDto dto)

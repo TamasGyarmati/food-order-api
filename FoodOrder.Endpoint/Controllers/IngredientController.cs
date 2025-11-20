@@ -14,4 +14,7 @@ public class IngredientController(IngredientLogic logic) : ControllerBase
         await logic.CreateAsync(dto);
         return Ok($"Successfully created ingredient named: '{dto.Name}'");
     }
+
+    [HttpDelete]
+    public async Task DeleteIngredient(string id) => await logic.DeleteAsync(id);
 }
