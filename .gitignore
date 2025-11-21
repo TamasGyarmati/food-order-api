@@ -68,7 +68,6 @@ secrets.json
 *.env.local
 
 ## EF Core
-Migrations/obj/
 *.db-shm
 *.db-wal
 

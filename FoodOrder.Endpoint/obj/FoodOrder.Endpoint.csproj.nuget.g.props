@@ -22,5 +22,6 @@
     <PkgMicrosoft_Extensions_ApiDescription_Server Condition=" '$(PkgMicrosoft_Extensions_ApiDescription_Server)' == '' ">/Users/tamasgyarmati/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5</PkgMicrosoft_Extensions_ApiDescription_Server>
     <PkgSlugGenerator Condition=" '$(PkgSlugGenerator)' == '' ">/Users/tamasgyarmati/.nuget/packages/sluggenerator/2.0.2</PkgSlugGenerator>
     <PkgMicrosoft_CodeAnalysis_Analyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_Analyzers)' == '' ">/Users/tamasgyarmati/.nuget/packages/microsoft.codeanalysis.analyzers/3.3.3</PkgMicrosoft_CodeAnalysis_Analyzers>
+    <PkgHangfire_SqlServer Condition=" '$(PkgHangfire_SqlServer)' == '' ">/Users/tamasgyarmati/.nuget/packages/hangfire.sqlserver/1.8.22</PkgHangfire_SqlServer>
   </PropertyGroup>
 </Project>

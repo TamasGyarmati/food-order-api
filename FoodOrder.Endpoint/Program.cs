@@ -3,6 +3,7 @@ using FoodOrder.Data.Repository;
 using FoodOrder.Endpoint.Helpers;
 using FoodOrder.Logic;
 using FoodOrder.Logic.Helpers;
+using Hangfire;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -36,6 +37,7 @@ public class Program
         builder.Services.AddTransient<IngredientLogic>();
         builder.Services.AddTransient<OrderLogic>();
         builder.Services.AddTransient<DtoProvider>();
+        builder.Services.AddTransient<FoodHub>();
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
@@ -45,6 +47,13 @@ public class Program
                 .UseLazyLoadingProxies();
         });
 
+        builder.Services.AddHangfire(config =>
+            config.UseSqlServerStorage(builder.Configuration["CustomConnectionStrings:HangfireDb"]));
+        
+        builder.Services.AddHangfireServer();
+
+        builder.Services.AddSignalR();
+        
         var app = builder.Build();
         
         if (app.Environment.IsDevelopment())
@@ -52,11 +61,21 @@ public class Program
             app.UseSwagger();
             app.UseSwaggerUI();
         }
-
+        
         app.MapControllers();
-
+        
         app.UseAuthorization();
 
+        app.MapHub<FoodHub>("/foodHub");
+        
+        // Ez elavult
+        // app.UseEndpoints(endpoints =>
+        // {
+        //     endpoints.MapHub<FoodHub>("/foodHub");
+        // });
+        
+        app.UseHangfireDashboard();
+        
         app.Run();
     }
 }
