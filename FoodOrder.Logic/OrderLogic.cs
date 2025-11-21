@@ -16,12 +16,12 @@ public class OrderLogic(IOrderRepository repo, IFoodRepository foodRepo, DtoProv
     
     public async Task<string> CreateAsync(Dtos.OrderCreateDto dto)
     {
-        if (dto.FoodId == null || dto.FoodId.Length == 0 || dto.FoodId.Any(string.IsNullOrEmpty))
+        if (dto.foodId == null || dto.foodId.Length == 0 || dto.foodId.Any(string.IsNullOrEmpty))
             throw new Exception("You must fill at least one FoodId!");
         
         var foods = new List<Food>();
         
-        foreach (var foodId in dto.FoodId)
+        foreach (var foodId in dto.foodId)
         {
             var food = await foodRepo.ReadById(foodId) ?? throw new Exception("One or more FoodId values are invalid.");
             foods.Add(food);

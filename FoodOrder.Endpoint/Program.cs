@@ -38,6 +38,7 @@ public class Program
         builder.Services.AddTransient<OrderLogic>();
         builder.Services.AddTransient<DtoProvider>();
         builder.Services.AddTransient<FoodHub>();
+        builder.Services.AddTransient<BackgroundJobMethodCalls>();
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
