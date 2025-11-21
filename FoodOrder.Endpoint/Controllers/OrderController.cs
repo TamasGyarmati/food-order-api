@@ -3,7 +3,6 @@ using FoodOrder.Entities;
 using FoodOrder.Logic;
 using Hangfire;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.SignalR;
 
 namespace FoodOrder.Endpoint.Controllers;
 
@@ -22,7 +21,9 @@ public class OrderController(
     {
         var orderId = await logic.CreateAsync(dto);
         
-        backgroundJobClient.Schedule(() => jobMethods.NewOrderSignal(orderId), TimeSpan.FromSeconds(5));
+        backgroundJobClient.Schedule(() 
+            => jobMethods.NewOrderSignal(orderId),
+            TimeSpan.FromSeconds(dto.delay));
         
         return Ok($"Successfully created order: {orderId}");
     }

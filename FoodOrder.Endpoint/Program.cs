@@ -50,9 +50,7 @@ public class Program
 
         builder.Services.AddHangfire(config =>
             config.UseSqlServerStorage(builder.Configuration["CustomConnectionStrings:HangfireDb"]));
-        
         builder.Services.AddHangfireServer();
-
         builder.Services.AddSignalR();
         
         var app = builder.Build();
