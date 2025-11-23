@@ -9,6 +9,11 @@
 
     <ItemGroup>
       <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="10.0.0" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\FoodOrder.Entities\FoodOrder.Entities.csproj" />
     </ItemGroup>
 
 </Project>
