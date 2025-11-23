@@ -1,7 +1,4 @@
 ﻿using System.Diagnostics;
-using System.Text;
-using System.Text.Json;
-using FoodOrder.Entities;
 using Microsoft.AspNetCore.SignalR.Client;
 
 namespace FoodOrder.Client;
@@ -112,6 +109,7 @@ class Program
         Console.WriteLine("\nPress enter to start the order.");
         Console.ReadLine();
 
+        // Ez eredetileg record, viszont a Client.cs-beli generált DTO-t használjuk ami sima class 
         var dto = new OrderCreateDto
         {
             FoodId = ["3d47c7a1-8f0f-4cb1-9b92-f5235eb3f83e"],
