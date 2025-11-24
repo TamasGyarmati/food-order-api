@@ -1,5 +1,6 @@
 using FoodOrder.Entities;
 using FoodOrder.Logic;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FoodOrder.Endpoint.Controllers;
@@ -12,6 +13,7 @@ public class FoodController(FoodLogic logic) : ControllerBase
     public IActionResult GetAllFoods() => Ok(logic.GetAll());
 
     [HttpPost]
+    [Authorize]
     public async Task<IActionResult> CreateFood(Dtos.FoodCreateDto dto)
     {
         await logic.CreateAsync(dto);
@@ -19,5 +21,6 @@ public class FoodController(FoodLogic logic) : ControllerBase
     }
 
     [HttpDelete]
+    [Authorize(Roles = "Admin")]
     public async Task DeleteFood(string id) => await logic.DeleteAsync(id);
 }

@@ -39,8 +39,10 @@ namespace FoodOrder.Endpoint.Controllers;
                 await roleManager.CreateAsync(new IdentityRole("OrderUser"));
                 await userManager.AddToRoleAsync(user, "Admin");
             }
-            
-            await userManager.AddToRoleAsync(user, "OrderUser");
+            else
+            {
+                await userManager.AddToRoleAsync(user, "OrderUser");
+            }
         }
 
         [HttpPost("refresh")]
