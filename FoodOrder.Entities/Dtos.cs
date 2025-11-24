@@ -7,10 +7,6 @@ namespace FoodOrder.Entities;
 
 public static class Dtos
 {
-    public record FoodCreateDto(
-        string Name,
-        [param: Range(1, 50)] double Price);
-
     public record IngredientCreateDto(
         string FoodId,
         [param: Required] string Name,
@@ -21,6 +17,10 @@ public static class Dtos
         string Name,
         double CaloriePer100Gramms,
         int Gramms);
+    
+    public record FoodCreateDto(
+        string Name,
+        [param: Range(1, 50)] double Price);
 
     public record FoodViewDto(
         [property: JsonPropertyOrder(0)] string Id,
@@ -42,4 +42,21 @@ public static class Dtos
         //[property: JsonPropertyOrder(0)] public string[] FoodId { get; set; }
         [property: JsonPropertyOrder(1)] public string[] Name { get; set; }
     }
+
+    public record LoginResultDto(
+        string AccessToken,
+        DateTime AccessTokenExpiration,
+        string RefreshToken,
+        DateTime RefreshTokenExpiration);
+    public record TokenApiDto(
+        string AccessToken,
+        string RefreshToken);
+    public record UserCreateDto(
+        string Email,
+        string Password,
+        string FamilyName,
+        string GivenName);
+    public record UserLoginDto(
+        string Email,
+        string Password);
 }

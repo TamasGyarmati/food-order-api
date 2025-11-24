@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "l0Zid8lJh3g=",
+  "dgSpecHash": "Vcdi409jOAQ=",
   "success": true,
-  "projectFilePath": "/Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/FoodOrder/FoodOrder.Endpoint/FoodOrder.Endpoint.csproj",
+  "projectFilePath": "/Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/VizsgaGyakorlas/FoodOrder/FoodOrder.Endpoint/FoodOrder.Endpoint.csproj",
   "expectedPackageFiles": [
     "/Users/tamasgyarmati/.nuget/packages/automapper/15.1.0/automapper.15.1.0.nupkg.sha512",
     "/Users/tamasgyarmati/.nuget/packages/azure.core/1.38.0/azure.core.1.38.0.nupkg.sha512",

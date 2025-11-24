@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/FoodOrder/FoodOrder.Data/FoodOrder.Data.csproj": {}
+    "/Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/VizsgaGyakorlas/FoodOrder/FoodOrder.Data/FoodOrder.Data.csproj": {}
   },
   "projects": {
-    "/Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/FoodOrder/FoodOrder.Data/FoodOrder.Data.csproj": {
+    "/Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/VizsgaGyakorlas/FoodOrder/FoodOrder.Data/FoodOrder.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/FoodOrder/FoodOrder.Data/FoodOrder.Data.csproj",
+        "projectUniqueName": "/Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/VizsgaGyakorlas/FoodOrder/FoodOrder.Data/FoodOrder.Data.csproj",
         "projectName": "FoodOrder.Data",
-        "projectPath": "/Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/FoodOrder/FoodOrder.Data/FoodOrder.Data.csproj",
+        "projectPath": "/Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/VizsgaGyakorlas/FoodOrder/FoodOrder.Data/FoodOrder.Data.csproj",
         "packagesPath": "/Users/tamasgyarmati/.nuget/packages/",
-        "outputPath": "/Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/FoodOrder/FoodOrder.Data/obj/",
+        "outputPath": "/Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/VizsgaGyakorlas/FoodOrder/FoodOrder.Data/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/tamasgyarmati/.nuget/NuGet/NuGet.Config"
@@ -27,8 +27,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/FoodOrder/FoodOrder.Entities/FoodOrder.Entities.csproj": {
-                "projectPath": "/Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/FoodOrder/FoodOrder.Entities/FoodOrder.Entities.csproj"
+              "/Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/VizsgaGyakorlas/FoodOrder/FoodOrder.Entities/FoodOrder.Entities.csproj": {
+                "projectPath": "/Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/VizsgaGyakorlas/FoodOrder/FoodOrder.Entities/FoodOrder.Entities.csproj"
               }
             }
           }
@@ -85,14 +85,14 @@
         }
       }
     },
-    "/Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/FoodOrder/FoodOrder.Entities/FoodOrder.Entities.csproj": {
+    "/Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/VizsgaGyakorlas/FoodOrder/FoodOrder.Entities/FoodOrder.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/FoodOrder/FoodOrder.Entities/FoodOrder.Entities.csproj",
+        "projectUniqueName": "/Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/VizsgaGyakorlas/FoodOrder/FoodOrder.Entities/FoodOrder.Entities.csproj",
         "projectName": "FoodOrder.Entities",
-        "projectPath": "/Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/FoodOrder/FoodOrder.Entities/FoodOrder.Entities.csproj",
+        "projectPath": "/Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/VizsgaGyakorlas/FoodOrder/FoodOrder.Entities/FoodOrder.Entities.csproj",
         "packagesPath": "/Users/tamasgyarmati/.nuget/packages/",
-        "outputPath": "/Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/FoodOrder/FoodOrder.Entities/obj/",
+        "outputPath": "/Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/VizsgaGyakorlas/FoodOrder/FoodOrder.Entities/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/tamasgyarmati/.nuget/NuGet/NuGet.Config"

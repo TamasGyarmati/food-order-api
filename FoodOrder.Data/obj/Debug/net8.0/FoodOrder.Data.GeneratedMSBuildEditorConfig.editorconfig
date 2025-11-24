@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = FoodOrder.Data
-build_property.ProjectDir = /Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/FoodOrder/FoodOrder.Data/
+build_property.ProjectDir = /Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/VizsgaGyakorlas/FoodOrder/FoodOrder.Data/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
