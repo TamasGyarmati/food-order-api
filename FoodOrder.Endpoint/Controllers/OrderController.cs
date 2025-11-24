@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using FoodOrder.Endpoint.Helpers;
 using FoodOrder.Entities;
 using FoodOrder.Logic;
@@ -22,7 +23,9 @@ public class OrderController(
     [Authorize]
     public async Task<IActionResult> CreateOrder(Dtos.OrderCreateDto dto)
     {
-        var orderId = await logic.CreateAsync(dto);
+        var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        
+        var orderId = await logic.CreateAsync(dto, userId);
         
         backgroundJobClient.Schedule(() 
             => jobMethods.NewOrderSignal(orderId),

@@ -40,7 +40,8 @@ public static class Dtos
         [property: JsonPropertyOrder(2)] DateTime OrderDate)
     {
         //[property: JsonPropertyOrder(0)] public string[] FoodId { get; set; }
-        [property: JsonPropertyOrder(1)] public string[] Name { get; set; }
+        [property: JsonPropertyOrder(1)] public string[] FoodName { get; set; }
+        [property: JsonPropertyOrder(3)] public string CreatorUserName { get; set; }
     }
 
     public record LoginResultDto(

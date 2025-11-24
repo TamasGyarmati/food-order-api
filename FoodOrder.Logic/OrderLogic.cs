@@ -14,10 +14,12 @@ public class OrderLogic(IOrderRepository repo, IFoodRepository foodRepo, DtoProv
         return orderView;
     }
     
-    public async Task<string> CreateAsync(Dtos.OrderCreateDto dto)
+    public async Task<string> CreateAsync(Dtos.OrderCreateDto dto, string? userId)
     {
         if (dto.foodId == null || dto.foodId.Length == 0 || dto.foodId.Any(string.IsNullOrEmpty))
             throw new Exception("You must fill at least one FoodId!");
+        
+        if (userId == null) throw new Exception("UserID is not found!");
         
         var foods = new List<Food>();
         
@@ -27,7 +29,7 @@ public class OrderLogic(IOrderRepository repo, IFoodRepository foodRepo, DtoProv
             foods.Add(food);
         }
         
-        var order = new Order { Food = foods };
+        var order = new Order { Food = foods, AppUserId = userId};
         
         var createdOrder = await repo.Create(order);
         

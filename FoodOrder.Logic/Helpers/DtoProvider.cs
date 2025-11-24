@@ -25,7 +25,8 @@ public class DtoProvider
                 .AfterMap((src, dest) =>
                 {
                     //dest.FoodId = src.Food?.Select(f => f.Id).ToArray() ?? [];
-                    dest.Name = src.Food?.Select(f => f.Name).ToArray() ?? [];
+                    dest.FoodName = src.Food?.Select(f => f.Name).ToArray() ?? [];
+                    dest.CreatorUserName = src.AppUser?.UserName ?? string.Empty;
                 });
 
         }, new LoggerFactory()));

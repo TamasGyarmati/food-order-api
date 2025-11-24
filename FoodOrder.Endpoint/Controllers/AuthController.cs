@@ -142,8 +142,8 @@ namespace FoodOrder.Endpoint.Controllers;
                   Encoding.UTF8.GetBytes(configuration["jwt:key"] ?? throw new Exception("jwt:key not found in appsettings.json")));
 
             return new JwtSecurityToken(
-                  issuer: "movieclub.com",
-                  audience: "movieclub.com",
+                  issuer: "foodorder.com",
+                  audience: "foodorder.com",
                   claims: claims?.ToArray(),
                   expires: DateTime.Now.AddMinutes(expiryInMinutes),
                   signingCredentials: new SigningCredentials(signinKey, SecurityAlgorithms.HmacSha256)
