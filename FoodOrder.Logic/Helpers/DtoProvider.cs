@@ -26,7 +26,7 @@ public class DtoProvider
                 {
                     //dest.FoodId = src.Food?.Select(f => f.Id).ToArray() ?? [];
                     dest.FoodName = src.Food?.Select(f => f.Name).ToArray() ?? [];
-                    dest.CreatorUserName = src.AppUser?.UserName ?? string.Empty;
+                    dest.CreatorUserName = string.Join(" ", src.AppUser?.FamilyName, src.AppUser?.GivenName);
                 });
 
         }, new LoggerFactory()));
