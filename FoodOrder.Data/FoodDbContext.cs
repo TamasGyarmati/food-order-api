@@ -1,13 +1,15 @@
 using FoodOrder.Entities.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace FoodOrder.Data;
 
-public class FoodDbContext(DbContextOptions<FoodDbContext> options) : DbContext(options)
+public class FoodDbContext(DbContextOptions<FoodDbContext> options) : IdentityDbContext(options)
 {
     public DbSet<Food> Foods { get; set; }
     public DbSet<Ingredient> Ingredients { get; set; }
     public DbSet<Order> Orders { get; set; }
+    public DbSet<AppUser> Users { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

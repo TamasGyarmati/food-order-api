@@ -1,11 +1,17 @@
+using System.Text;
 using FoodOrder.Data;
 using FoodOrder.Data.Repository;
 using FoodOrder.Endpoint.Helpers;
+using FoodOrder.Entities.Models;
 using FoodOrder.Logic;
 using FoodOrder.Logic.Helpers;
 using Hangfire;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 
 namespace FoodOrder.Endpoint;
 
@@ -40,7 +46,40 @@ public class Program
         builder.Services.AddTransient<FoodHub>();
         builder.Services.AddTransient<BackgroundJobMethodCalls>();
         builder.Services.AddEndpointsApiExplorer();
-        builder.Services.AddSwaggerGen();
+        
+        
+        builder.Services.AddSwaggerGen(option =>
+        {
+            option.SwaggerDoc("v1", new OpenApiInfo { Title = "FoodOrder API", Version = "v1" });
+            option.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+            {
+                In = ParameterLocation.Header,
+                Description = "Please enter a valid token",
+                Name = "Authorization",
+                Type = SecuritySchemeType.Http,
+                BearerFormat = "JWT",
+                Scheme = "Bearer"
+            });
+            option.AddSecurityRequirement(new OpenApiSecurityRequirement
+            {
+                {
+                    new OpenApiSecurityScheme
+                    {
+                        Reference = new OpenApiReference
+                        {
+                            Type=ReferenceType.SecurityScheme,
+                            Id="Bearer"
+                        }
+                    },
+                    []
+                }
+            });
+        });
+        
+        builder.Services.AddIdentity<AppUser, IdentityRole>()
+            .AddRoles<IdentityRole>()
+            .AddEntityFrameworkStores<FoodDbContext>()
+            .AddDefaultTokenProviders();
 
         builder.Services.AddDbContext<FoodDbContext>(opt =>
         {
@@ -53,6 +92,25 @@ public class Program
         builder.Services.AddHangfireServer();
         builder.Services.AddSignalR();
         
+        builder.Services.AddAuthentication(option =>
+        {
+            option.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+            option.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            option.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+        }).AddJwtBearer(options =>
+        {
+            options.SaveToken = true;
+            options.RequireHttpsMetadata = true;
+            options.TokenValidationParameters = new TokenValidationParameters()
+            {
+                ValidateIssuer = true,
+                ValidateAudience = true,
+                ValidAudience = "foodorder.com",
+                ValidIssuer = "foodorder.com",
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["jwt:key"] ?? throw new Exception("jwt:key not found in appsettings.json")))
+            };
+        });
+        
         var app = builder.Build();
         
         if (app.Environment.IsDevelopment())
@@ -62,7 +120,8 @@ public class Program
         }
         
         app.MapControllers();
-        
+
+        app.UseAuthentication();
         app.UseAuthorization();
 
         app.MapHub<FoodHub>("/foodHub");

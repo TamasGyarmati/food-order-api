@@ -9,3 +9,15 @@
 /Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/FoodOrder/FoodOrder.Entities/obj/Debug/net8.0/refint/FoodOrder.Entities.dll
 /Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/FoodOrder/FoodOrder.Entities/obj/Debug/net8.0/FoodOrder.Entities.pdb
 /Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/FoodOrder/FoodOrder.Entities/obj/Debug/net8.0/ref/FoodOrder.Entities.dll
+/Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/VizsgaGyakorlas/FoodOrder/FoodOrder.Entities/bin/Debug/net8.0/FoodOrder.Entities.deps.json
+/Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/VizsgaGyakorlas/FoodOrder/FoodOrder.Entities/bin/Debug/net8.0/FoodOrder.Entities.dll
+/Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/VizsgaGyakorlas/FoodOrder/FoodOrder.Entities/bin/Debug/net8.0/FoodOrder.Entities.pdb
+/Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/VizsgaGyakorlas/FoodOrder/FoodOrder.Entities/obj/Debug/net8.0/FoodOrder.Entities.csproj.AssemblyReference.cache
+/Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/VizsgaGyakorlas/FoodOrder/FoodOrder.Entities/obj/Debug/net8.0/FoodOrder.Entities.GeneratedMSBuildEditorConfig.editorconfig
+/Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/VizsgaGyakorlas/FoodOrder/FoodOrder.Entities/obj/Debug/net8.0/FoodOrder.Entities.AssemblyInfoInputs.cache
+/Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/VizsgaGyakorlas/FoodOrder/FoodOrder.Entities/obj/Debug/net8.0/FoodOrder.Entities.AssemblyInfo.cs
+/Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/VizsgaGyakorlas/FoodOrder/FoodOrder.Entities/obj/Debug/net8.0/FoodOrder.Entities.csproj.CoreCompileInputs.cache
+/Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/VizsgaGyakorlas/FoodOrder/FoodOrder.Entities/obj/Debug/net8.0/FoodOrder.Entities.dll
+/Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/VizsgaGyakorlas/FoodOrder/FoodOrder.Entities/obj/Debug/net8.0/refint/FoodOrder.Entities.dll
+/Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/VizsgaGyakorlas/FoodOrder/FoodOrder.Entities/obj/Debug/net8.0/FoodOrder.Entities.pdb
+/Users/tamasgyarmati/Documents/Egyetem/25_26_1/Szerveroldali fejlesztés/VizsgaGyakorlas/FoodOrder/FoodOrder.Entities/obj/Debug/net8.0/ref/FoodOrder.Entities.dll
