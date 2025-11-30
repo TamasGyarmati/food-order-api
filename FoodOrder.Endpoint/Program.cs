@@ -126,12 +126,6 @@ public class Program
 
         app.MapHub<FoodHub>("/foodHub");
         
-        // Ez elavult
-        // app.UseEndpoints(endpoints =>
-        // {
-        //     endpoints.MapHub<FoodHub>("/foodHub");
-        // });
-        
         app.UseHangfireDashboard();
         
         app.Run();
